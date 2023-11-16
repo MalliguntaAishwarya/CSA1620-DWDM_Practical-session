@@ -1,6 +1,17 @@
+# Create a vector with your data
 data <- c(200, 300, 400, 600, 1000)
-min_max_normalized <- (data - min(data)) / (max(data) - min(data))
-z_score_normalized <- (data - mean(data)) / sd(data)
-cat("Original Data: ", data, "\n")
-cat("(a) Min-Max Normalization: ", min_max_normalized, "\n")
-cat("(b) Z-Score Normalization: ", z_score_normalized, "\n")
+
+min_value <- 0
+max_value <- 1
+
+# Perform Min-Max normalization
+normalized_data <- (data - min(data)) / (max(data) - min(data)) * (max_value - min_value) + min_value
+
+# View the normalized data
+print(normalized_data)
+
+# Use the scale function for Z-score normalization
+normalized_data <- scale(data)
+
+# View the normalized data
+ print(normalized_data)
